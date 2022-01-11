@@ -1,0 +1,66 @@
+
+
+./node-template \
+--chain=local \
+--base-path /tmp/tmpl1 \
+--alice \
+--node-key=213216127a8a8756f4017d2aaafa7e0054e9958e7ded5d5784c5e2f6f6365e0f \
+--port 30333 \
+--ws-port 9944 \
+--rpc-port 9933 \
+--validator \
+--rpc-cors all \
+--execution native \
+--unsafe-rpc-external \
+--unsafe-ws-external \
+--rpc-methods=unsafe
+
+
+
+
+./node-template \
+--chain=local \
+--base-path /tmp/tmpl2 \
+--name bob \
+--node-key=3b7a5239d28e90a6941dba9266b8f7135b966885e21988fb0c6e7f55516c73f3 \
+--port 30334 \
+--ws-port 9945 \
+--rpc-port 9934 \
+--validator \
+--rpc-cors all \
+--execution native \
+--unsafe-rpc-external \
+--unsafe-ws-external \
+--rpc-methods=unsafe \
+--bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWFzXtYJhUkMsWTXQodYaXhs6ah52xVExicuFPvmUQoZrE
+
+
+
+---------------------
+./node-template \
+--chain ./customSpecRaw_test.json \
+--base-path /tmp/tmpl1 \
+--alice \
+--node-key=213216127a8a8756f4017d2aaafa7e0054e9958e7ded5d5784c5e2f6f6365e0f \
+--port 30333 \
+--ws-port 9944 \
+--rpc-port 9933 \
+--validator \
+--rpc-cors all \
+--execution wasm \
+--unsafe-rpc-external \
+--unsafe-ws-external \
+--rpc-methods=unsafe
+
+
+
+
+
+
+
+
+
+
+
+
+

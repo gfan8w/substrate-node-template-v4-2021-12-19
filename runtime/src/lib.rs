@@ -41,6 +41,8 @@ pub use sp_runtime::BuildStorage;
 pub use sp_runtime::{Perbill, Permill};
 
 /// Import the template pallet.
+pub use pallet_template;
+/// import the kitties pallet
 pub use pallet_kitties;
 
 /// An index to a block.
@@ -274,6 +276,10 @@ impl pallet_sudo::Config for Runtime {
 	type Call = Call;
 }
 
+impl pallet_template::Config for Runtime {
+	type Event = Event;
+}
+
 parameter_types! {
 	pub StakeForEachKitty: u128 = 1_000;
 }
@@ -303,7 +309,9 @@ construct_runtime!(
 		TransactionPayment: pallet_transaction_payment,
 		Sudo: pallet_sudo,
 		// Include the custom logic from the pallet-template in the runtime.
+        TemplateModule: pallet_template,
 		SubstrateKitties: pallet_kitties,
+
 	}
 );
 
