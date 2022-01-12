@@ -149,8 +149,9 @@ pub mod pallet {
 			//这个方法OK，注意已经改为ValueQuery
 			/*<Validators<T>>::try_mutate(|valid| match valid {
 				Some(v) => {
-					if let Some(ind) = v.iter().position(|id| *id == validator_id) {
-						v.swap_remove(ind);
+					if let Some(index) = v.iter().position(|id| *id == validator_id) {
+						//v.swap_remove(index);
+						v.remove(index);
 						return Ok(());
 					}
 					Err(())
