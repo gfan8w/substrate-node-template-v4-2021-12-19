@@ -9,7 +9,7 @@ use sp_runtime::{Permill,Percent};
 #[test]
 fn it_works_for_Permill_value() {
     new_test_ext().execute_with(|| {
-
+		// 这里有个讨论： https://github.com/paritytech/substrate/issues/2441
 		let s_2679: u32 =2679;
         let a_parts = Permill::from_parts(s_2679); // a_parts:Permill(2679)
         let b_percent = Permill::from_percent(s_2679); // b_percent:Permill(1000000)

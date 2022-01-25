@@ -276,8 +276,12 @@ impl pallet_sudo::Config for Runtime {
 	type Call = Call;
 }
 
+//添加benchmark的注意点：
+// 1) 关联类型添加：type WeightInfo = pallet_template::weights::SubstrateWeightInfo<Runtime>
+// 2) runtime 运行时里 要添加：list_benchmark!(list, extra, pallet_template, TemplateModule);
 impl pallet_template::Config for Runtime {
 	type Event = Event;
+	type WeightInfo = pallet_template::weights::SubstrateWeightInfo<Runtime>; // 添加具体的实现
 }
 
 parameter_types! {
