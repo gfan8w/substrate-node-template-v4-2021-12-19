@@ -23,10 +23,57 @@ benchmark \
 --template ./tpl/frame-weight-template.hbs
 
 命令输出：
+
+Raw Storage Info
+========
+Storage: TemplateModule Something (r:0 w:1)
+
+Median Slopes Analysis
+========
+-- Extrinsic Time --
+
 Model:
-Time ~=    19.68    <------ 这个值 跟生成的代码 weights.rs 里的 19_682_000 是相近的（* 10^6）
+Time ~=       20
+    + s        0
+              µs
+
+Reads = 0 + (0 * s)
+Writes = 1 + (0 * s)
+
+Min Squares Analysis
+========
+-- Extrinsic Time --
+
+Data points distribution:
+    s   mean µs  sigma µs       %
+    0        19         0    0.0%
+    2        19         0    0.0%
+    4        19         0    0.0%
+    6        19         0    0.0%
+    8      19.1       0.3    1.5%
+   10        19         0    0.0%
+   ......
+   86        20         0    0.0%
+   88      20.1       0.3    1.4%
+   90      20.2       0.4    1.9%
+   92        20         0    0.0%
+   94      20.4     0.489    2.3%
+   96        20         0    0.0%
+   98        20         0    0.0%
+  100        20         0    0.0%
+
+Quality and confidence:
+param     error
+s             0
+
+Model:
+Time ~=    19.68             <------ 这个值 跟生成的代码 weights.rs 里的 19_682_000 是相近的（* 10^6）
     + s    0.008
               µs
+
+Reads = 0 + (0 * s)
+Writes = 1 + (0 * s)
+
 
 文件生成不全
 修改一下 该文件，
@@ -38,7 +85,6 @@ Time ~=    19.68    <------ 这个值 跟生成的代码 weights.rs 里的 19_68
 5） 参考：
 https://zhuanlan.zhihu.com/p/109696123
 https://medium.com/oak-blockchain/tutorial-benchmarking-for-parity-substrate-pallet-development-9cb68bf87ea2
-
 
 
 */
