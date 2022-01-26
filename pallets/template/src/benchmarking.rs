@@ -8,6 +8,7 @@ use super::*;
 
 生成weights.rs:
 1）去网上下载模板文件：https://github.com/paritytech/substrate/blob/master/.maintain/frame-weight-template.hbs
+                   https://github.com/PureStake/moonbeam/blob/master/benchmarking/frame-weight-template.hbs （这个更好）
 2) 把benchmarks的代码准备好，runtime里的依赖也处理好。然后编译 cargo build --release --features runtime-benchmarks
 3) 生成bin后，运行：
 ./target/release/node-template \
